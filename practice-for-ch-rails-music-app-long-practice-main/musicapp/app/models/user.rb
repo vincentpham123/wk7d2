@@ -1,3 +1,4 @@
+
 class User < ApplicationRecord
     validates :username, :session_token, presence: true 
     validates :username, uniqueness: true 
@@ -20,12 +21,13 @@ class User < ApplicationRecord
         #keep generating session tokens until a unique one exists
         loop do 
             session_token = SecureRandom::urlsafe_base64(16)
-            return session_token if User.exist?(session_token: session_token)
+            return session_token unless User.exists?(session_token: session_token)
         end
     end
 
 
     def password=(password)
+        @password= password
         self.password_digest = BCrypt::Password.create(password)
     end
 
