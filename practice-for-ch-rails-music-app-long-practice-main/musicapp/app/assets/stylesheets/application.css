@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+
+ 
+
+ /* header {
+    width: 1200px;
+    display:flex;
+    font-family: cursive;
+ } */
+body{
+    background-image: url(https://pbs.twimg.com/media/CSJZCOFXIAAyaTf.jpg);
+ 
+    
+}
+
+header h1{
+    background-color: beige;
+    color:indigo;
+    display: flex;
+    justify-content: center;
+}
+
+#log_out, #log_in, #sign_up{
+    display:flex;
+    justify-content: flex-end;
+
+}
+
+
+

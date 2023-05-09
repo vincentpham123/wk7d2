@@ -1,9 +1,36 @@
 <!DOCTYPE html>
+
+<html>
 <header>
   <h1>MUSIC APP </h1>
   
+  <% if logged_in? %>
+  
+    <form id="log_out_button" action= '<%=session_url%>' method='POST' > 
+      <input type='hidden' name='authenticity_token' value= "<%=form_authenticity_token %>" >
+      <input type = 'hidden' name='_method' value = 'DELETE'>
+      <div id='log_out'>
+      <input type = 'submit' value='Log out'>
+      </div>
+    </form>
+    <br>
+    <% else %>
+    <form id="log_in_button" action= '<%=new_session_url%>' method='GET' > 
+      <input type='hidden' name='authenticity_token' value= "<%=form_authenticity_token %>" >
+      <div id='log_in'>
+      <input type = 'submit' value='Log in'>
+      </div>
+    </form>
+    <br>
+    <form id="sign_up_button" action= '<%=new_user_url%>' method='GET' > 
+      <input type='hidden' name='authenticity_token' value= "<%=form_authenticity_token %>" >
+      <div id='sign_up'>
+      <input type = 'submit' value='sign up'>
+      </div>
+    </form>
+  <% end%>
 </header>
-<html>
+
   <head>
     <title>Musicapp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -14,6 +41,8 @@
   </head>
 
   <body>
+    <div id='yield'>
     <%= yield %>
+    </div>
   </body>
 </html>
