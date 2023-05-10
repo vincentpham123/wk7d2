@@ -21,6 +21,10 @@
     display:flex;
     font-family: cursive;
  } */
+
+ body{
+    color: white;
+ }
 body{
     background-image: url(https://pbs.twimg.com/media/CSJZCOFXIAAyaTf.jpg);
  

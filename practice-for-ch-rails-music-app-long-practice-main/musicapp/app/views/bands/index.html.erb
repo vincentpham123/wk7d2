@@ -1,0 +1,6 @@
+<div>
+<%@bands.each do |band|%>
+    <a href= "<%= band_url(band.id)%>"><%=band.name %></a>
+    <br>
+<% end %>
+</div>
